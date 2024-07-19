@@ -75,7 +75,8 @@ const BpmnContainer: FC<{ children?: any }> = ({ children }) => {
     (params: any) => setEdges((eds) => addEdge(params, eds)),
     [setEdges],
   );
-
+  console.table(nodes)
+  console.table(edges)
   return (
     <ReactFlowProvider>
       <ReactFlow
@@ -86,6 +87,9 @@ const BpmnContainer: FC<{ children?: any }> = ({ children }) => {
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
+        defaultEdgeOptions={{
+          type: EDGE_TYPE.SEQUENCE_FLOW
+        }}
 
       // fitView
       >
