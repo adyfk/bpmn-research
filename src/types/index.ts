@@ -1,4 +1,4 @@
-import { Node } from "@xyflow/react";
+import { Edge, Node } from "@xyflow/react";
 
 export enum NODE_TYPE {
   EVENT_START = 'event-start',
@@ -17,8 +17,8 @@ export enum NODE_TYPE {
 }
 
 export interface NodeDataType extends Record<string, any> {
-  label: string;
-  engine: Partial<{
+  label?: string;
+  engine?: Partial<{
     completed: boolean;
     completedAt: string;
     completeInfo: string;
@@ -59,3 +59,26 @@ export type EventsType = EventStartType | EventEndType
 
 // Mixed
 export type EntityType = TasksType | GatewaysType | EventsType
+
+
+
+// ==================
+// https://www.bpmnquickguide.com/view-bpmn-quick-guide/
+export enum EDGE_TYPE {
+  SEQUENCE_FLOW = 'sequence-flow',
+  MESSAGE_FLOW = 'message-flow',
+  ASSOCIATION = 'association',
+  DATA_ASSOCIATION = 'data-association',
+}
+
+export interface EdgeDataType  extends Record<string, any> {
+  condition?: string;
+  label?: string;
+}
+
+export type SquenceFlowType = Edge<EdgeDataType, EDGE_TYPE.SEQUENCE_FLOW>
+export type MessageFlowType = Edge<Omit<EdgeDataType ,'condition'>, EDGE_TYPE.MESSAGE_FLOW>
+export type AssociationType = Edge<Omit<EdgeDataType ,'condition'>, EDGE_TYPE.ASSOCIATION>
+export type DataAssociationType = Edge<Omit<EdgeDataType ,'condition'>, EDGE_TYPE.DATA_ASSOCIATION>
+
+export type FlowType = SquenceFlowType | MessageFlowType | AssociationType | DataAssociationType;
