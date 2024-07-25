@@ -1,4 +1,4 @@
-import { NODE_TYPE } from "@/types";
+import { ENTITY_TYPE } from "@/types";
 import { BpmnTaskIcon } from "./task";
 import { BpmnTaskUserIcon } from "./task-user";
 import { BpmnTaskServiceIcon } from "./task-service";
@@ -11,38 +11,38 @@ import { BpmnGatewayXorIcon } from "./gateway-xor";
 import { BpmnEventStartIcon } from "./event-start";
 import { BpmnEventEndIcon } from "./event-end";
 
-// import { NODE_TYPE } from "@/types";
+// import { ENTITY_TYPE } from "@/types";
 
 export const ICONS = {
-  [NODE_TYPE.TASK]: BpmnTaskIcon,
-  [NODE_TYPE.TASK_USER]: BpmnTaskUserIcon,
-  [NODE_TYPE.TASK_SERVICE]: BpmnTaskServiceIcon,
+  [ENTITY_TYPE.TASK]: BpmnTaskIcon,
+  [ENTITY_TYPE.TASK_USER]: BpmnTaskUserIcon,
+  [ENTITY_TYPE.TASK_SERVICE]: BpmnTaskServiceIcon,
   // gateway
-  [NODE_TYPE.GATEWAY]: BpmnGatewayIcon,
-  [NODE_TYPE.GATEWAY_COMPLEX]: BpmnGatewayComplexIcon,
-  [NODE_TYPE.GATEWAY_EVENTBASED]: BpmnGatewayEventbasedIcon,
-  [NODE_TYPE.GATEWAY_AND]: BpmnGatewayAndIcon,
-  [NODE_TYPE.GATEWAY_OR]: BpmnGatewayOrIcon,
-  [NODE_TYPE.GATEWAY_XOR]: BpmnGatewayXorIcon,
+  [ENTITY_TYPE.GATEWAY]: BpmnGatewayIcon,
+  [ENTITY_TYPE.GATEWAY_COMPLEX]: BpmnGatewayComplexIcon,
+  [ENTITY_TYPE.GATEWAY_EVENTBASED]: BpmnGatewayEventbasedIcon,
+  [ENTITY_TYPE.GATEWAY_AND]: BpmnGatewayAndIcon,
+  [ENTITY_TYPE.GATEWAY_OR]: BpmnGatewayOrIcon,
+  [ENTITY_TYPE.GATEWAY_XOR]: BpmnGatewayXorIcon,
   // event
-  [NODE_TYPE.EVENT_START]: BpmnEventStartIcon,
-  [NODE_TYPE.EVENT_END]: BpmnEventEndIcon,
+  [ENTITY_TYPE.EVENT_START]: BpmnEventStartIcon,
+  [ENTITY_TYPE.EVENT_END]: BpmnEventEndIcon,
 }
 
 // export const ICONS = {
-//   [NODE_TYPE.EVENT_START]: 'bpmn:start-event',
-//   [NODE_TYPE.EVENT_END]: 'bpmn:end-event',
+//   [ENTITY_TYPE.EVENT_START]: 'bpmn:start-event',
+//   [ENTITY_TYPE.EVENT_END]: 'bpmn:end-event',
 //   // 
-//   [NODE_TYPE.TASK]: 'bpmn:task',
-//   [NODE_TYPE.TASK_USER]: 'bpmn:user-task',
-//   [NODE_TYPE.TASK_SERVICE]: 'bpmn:service-task',
+//   [ENTITY_TYPE.TASK]: 'bpmn:task',
+//   [ENTITY_TYPE.TASK_USER]: 'bpmn:user-task',
+//   [ENTITY_TYPE.TASK_SERVICE]: 'bpmn:service-task',
 //   // 
-//   [NODE_TYPE.GATEWAY]: 'bpmn:gateway',
-//   [NODE_TYPE.GATEWAY_XOR]: 'bpmn:gateway-xor',
-//   [NODE_TYPE.GATEWAY_AND]: 'bpmn:gateway-parallel',
-//   [NODE_TYPE.GATEWAY_OR]: 'bpmn:gateway-or',
-//   [NODE_TYPE.GATEWAY_EVENTBASED]: 'bpmn:gateway-eventbased',
-//   [NODE_TYPE.GATEWAY_COMPLEX]: 'bpmn:gateway-complex',
-//   // [NODE_TYPE.]: 'data-object',
-//   // [NODE_TYPE.]: 'data-store',
+//   [ENTITY_TYPE.GATEWAY]: 'bpmn:gateway',
+//   [ENTITY_TYPE.GATEWAY_XOR]: 'bpmn:gateway-xor',
+//   [ENTITY_TYPE.GATEWAY_AND]: 'bpmn:gateway-parallel',
+//   [ENTITY_TYPE.GATEWAY_OR]: 'bpmn:gateway-or',
+//   [ENTITY_TYPE.GATEWAY_EVENTBASED]: 'bpmn:gateway-eventbased',
+//   [ENTITY_TYPE.GATEWAY_COMPLEX]: 'bpmn:gateway-complex',
+//   // [ENTITY_TYPE.]: 'data-object',
+//   // [ENTITY_TYPE.]: 'data-store',
 // }

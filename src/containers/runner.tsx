@@ -8,7 +8,7 @@ const BpmnContainer = dynamic(() => import('@/components/bpmn-container'), { ssr
 const Runner = () => {
 
   return (
-    <div className='relative w-screen h-screen bg-white'>
+    <div className=''>
       <BpmnContainer />
     </div>
   )

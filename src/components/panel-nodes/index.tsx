@@ -3,13 +3,13 @@ import { Icon } from '@iconify/react';
 import clsx from 'clsx';
 import { ENTITIES } from '../../constants';
 import { ICONS } from '@/icons';
-import { NODE_TYPE } from '@/types';
+import { ENTITY_TYPE } from '@/types';
 
 const DialogListEntities = ({ title, groupBy, onClose }: { title: string; onClose: () => void; groupBy?: string }) => {
   const ref = useRef<any>()
   const [search, setSearch] = useState('')
 
-  const onDragStart = (event: DragEvent<HTMLDivElement>, nodeType: NODE_TYPE) => {
+  const onDragStart = (event: DragEvent<HTMLDivElement>, nodeType: ENTITY_TYPE) => {
     event.dataTransfer.setData('application/reactflow', nodeType);
     event.dataTransfer.effectAllowed = 'move';
   };
@@ -72,6 +72,7 @@ const DialogListEntities = ({ title, groupBy, onClose }: { title: string; onClos
                     }}
                     onDragOver={onClose}
                     title={label}
+                    draggable
                   >
                     {!!Icon && (
                       <Icon className='h-8 w-auto node' draggable />
@@ -110,7 +111,7 @@ const MoreEntities = () => {
 
 const PanelNodes = () => {
 
-  const onDragStart = (event: DragEvent<HTMLDivElement>, nodeType: NODE_TYPE) => {
+  const onDragStart = (event: DragEvent<HTMLDivElement>, nodeType: ENTITY_TYPE) => {
     event.dataTransfer.setData('application/reactflow', nodeType);
     event.dataTransfer.effectAllowed = 'move';
   };
@@ -119,7 +120,7 @@ const PanelNodes = () => {
     <div className='p-2 border-2 border-solid border-gray-200 rounded-md m-2 bg-white'>
       <div className='flex flex-col gap-2'>
         {ENTITIES.filter((entity) =>
-          [NODE_TYPE.EVENT_START, NODE_TYPE.TASK, NODE_TYPE.GATEWAY].includes(entity.key)
+          [ENTITY_TYPE.EVENT_START, ENTITY_TYPE.TASK, ENTITY_TYPE.GATEWAY].includes(entity.key)
         ).map(({ key, label }) => {
 
           const Icon = (ICONS as any)[key]
@@ -128,6 +129,7 @@ const PanelNodes = () => {
               key={key}
               onDragStart={(event) => onDragStart(event, key)}
               title={label}
+              draggable
             >
               {!!Icon && (
                 <Icon className='w-8 h-8 node' />
